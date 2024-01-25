@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: app-certificate
+  namespace: default
+spec:
+  dnsNames:
+  - test.itops.frontline.rocks
+  issuerRef:
+    group: cert-manager.io
+    kind: Issuer
+    name: app-issuer 
+  secretName: app-certificate-secret
+  usages:
+  - digital signature
+  - key encipherment
